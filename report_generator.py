@@ -46,20 +46,20 @@ def generate_vat_report(invoice_path, bill_path, expense_path, vendor_credit_pat
     # -----------------------------
     # FIND IMPORTANT COLUMNS
     # -----------------------------
-    invoice_tax = find_column(invoice, ["tax amount", "item tax"])
-    invoice_total = find_column(invoice, ["item total", "amount"])
+    invoice_tax = find_column(invoice, ["item tax amount"])
+    invoice_total = find_column(invoice, ["item total"])
 
-    bill_tax = find_column(bill, ["tax amount", "tax"])
-    bill_total = find_column(bill, ["total", "amount"])
+    bill_tax = find_column(bill, ["tax amount"])
+    bill_total = find_column(bill, ["item total"])
 
-    credit_tax = find_column(credit_note, ["tax amount", "item tax"])
-    credit_total = find_column(credit_note, ["item total", "amount"])
+    credit_tax = find_column(credit_note, ["tax amount"])
+    credit_total = find_column(credit_note, ["item total"])
 
-    vendor_credit_tax = find_column(vendor_credit, ["tax amount", "item tax"])
-    vendor_credit_total = find_column(vendor_credit, ["total", "amount"])
+    vendor_credit_tax = find_column(vendor_credit, ["item tax amount"])
+    vendor_credit_total = find_column(vendor_credit, ["item total"])
 
-    expense_tax = find_column(expense, ["tax amount", "tax"])
-    expense_total = find_column(expense, ["expense amount", "amount"])
+    expense_tax = find_column(expense, ["tax amount"])
+    expense_total = find_column(expense, ["expense amount"])
 
     # -----------------------------
     # SAFE FILTERING
